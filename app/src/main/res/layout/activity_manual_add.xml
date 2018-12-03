@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lak.mqttchat.ManualAdd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <EditText
+            android:id="@+id/manlastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/mansub"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="74dp"
+            android:ems="10"
+            android:hint="Last Name"
+            android:imeActionId="6"
+            android:imeActionLabel="UserName"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="41dp" />
+
+        <EditText
+            android:id="@+id/manuname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/manlastname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="89dp"
+            android:ems="10"
+            android:hint="Name"
+            android:imeActionId="6"
+            android:imeActionLabel="Last Name"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="122dp" />
+
+        <Button
+            android:id="@+id/mansub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="160dp"
+            android:text="Submit" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
