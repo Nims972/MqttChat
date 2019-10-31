@@ -124,6 +124,8 @@ public class MsgReceiver2 extends IntentService {
                     //Log.d("msgS", "Calling Reply");
 
                     String dmsg=message.toString();
+                    dmsg = decrypt(dmsg,7).toString();
+
                     if(dmsg.equals("ACKFORTESTONLINE"))
                     {
                         Log.d("msgS", "Calling Reply");
@@ -210,7 +212,21 @@ public class MsgReceiver2 extends IntentService {
         }
 
     }
-
+    public static StringBuffer decrypt(String ctext, int s)
+    {
+        StringBuffer result= new StringBuffer();
+        for (int i=0; i<ctext.length(); i++) {
+            if (Character.isUpperCase(ctext.charAt(i))) {
+                char ch = (char)(((int)ctext.charAt(i) - s - 65) % 26 + 65);
+                result.append(ch);
+            }
+            else {
+                char ch = (char)(((int)ctext.charAt(i) - s - 97) % 26 + 97);
+                result.append(ch);
+            }
+        }
+        return result;
+    }
     @Override
     public int onStartCommand(@Nullable Intent intent, int flags, int startId) {
         onHandleIntent(intent);
